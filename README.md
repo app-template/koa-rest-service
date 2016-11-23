@@ -9,9 +9,14 @@ git clone https://github.com/app-template/koa-rest-service
       npm install
 
       npm start
-
+      
 Or
+
       node --harmony app.js
+      
+And access the sample resource(users) with:
+      
+      http://yourhost:3000/api/users
 
 Run test
 
@@ -19,7 +24,7 @@ Run test
 
 ## Features
 
-Rest Web Server framework, configured common middlewares, include security, log, timeout, body parser etc.
+Rest Web Server template, configured with common middlewares, include security, log, timeout, body parser etc.
 Without static pages, without database.
 
 ## How to start your work
