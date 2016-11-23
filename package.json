@@ -13,6 +13,7 @@
     "debug": "^2.3.3",
     "file-stream-rotator": "0.0.7",
     "http-errors": "^1.5.1",
+    "jsonschema": "^1.1.0",
     "koa": "^2.0.0",
     "koa-bodyparser": "^3.2.0",
     "koa-compress": "^2.0.0",
