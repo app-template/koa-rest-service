@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "debug": "^2.3.3",
+    "ejs": "^2.5.2",
     "file-stream-rotator": "0.0.7",
     "http-errors": "^1.5.1",
     "jsonschema": "^1.1.0",

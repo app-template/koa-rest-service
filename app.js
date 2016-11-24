@@ -15,11 +15,10 @@ const help = require('./lib/middlewares/help');
 
 const Router = require('koa-router');
 const api = Router({prefix: '/api'});
-require('./lib/resources/user-rs')(api);
+require('./lib/resources/user.rs')(api);
 
 app.proxy = true;
 app.use(helmet());
-app.use(etag());
 app.use(accLogger());
 app.use(id());
 app.use(appLogger());
@@ -29,6 +28,7 @@ app.use(bodyParser());
 app.use(compress());
 app.use(timeout(500));
 app.use(help(api));
+app.use(etag());
 app.use(api.routes());
 app.on('error', err => global.logger.error(err));
 
