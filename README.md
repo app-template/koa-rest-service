@@ -1,10 +1,16 @@
 # koa-rest-service
 
+## Description & Features
+
+Rest Web Server template, with sample rest endpoint `users`, configured with common middlewares, include security, log, timeout, body parser etc.
+Without static pages, without database.
+
 ## Install
 node version 7.0.0+
 
-git clone https://github.com/app-template/koa-rest-service
+      git clone git@github.com:app-template/koa-rest-service.git
 
+      cd koa-rest-service
 
       npm install
 
@@ -14,24 +20,22 @@ Or
 
       node --harmony app.js
       
-And access the sample resource(users) with:
+Now access the sample resource(users) with:
       
-      http://yourhost:3000/api/users
+      http://yourhost:3000/api
 
 Run test
 
       npm test
 
-## Features
-
-Rest Web Server template, configured with common middlewares, include security, log, timeout, body parser etc.
-Without static pages, without database.
 
 ## How to start your work
 
-Write resource in /lib/resources/xxxx-rs.js
+Write resource in /lib/resources/xxxx.rs.js
 
-Write service in /lib/services/xxxx-svc.js, note context in constructor and wrap with servie function like sample
+Write resource schema in /lib/resources/xxxx.schm.js
+
+Write service in /lib/services/xxxx.svc.js, note context in constructor and wrap with servie function like sample
 
 Register resource in app.js
 
