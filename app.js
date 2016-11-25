@@ -15,7 +15,12 @@ const help = require('./lib/middlewares/help');
 
 const Router = require('koa-router');
 const api = Router({prefix: '/api'});
+const mock = require('./lib/common/mock')(api);
+
+// real resource
 require('./lib/resources/user.rs')(api);
+// mock resource
+mock('/users', require('./lib/resources/user.schm'));
 
 app.proxy = true;
 app.use(helmet());
