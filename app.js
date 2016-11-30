@@ -11,16 +11,11 @@ const appLogger = require('./lib/middlewares/app-logger');
 const accLogger = require('./lib/middlewares/acc-logger');
 const error = require('./lib/middlewares/error');
 const etag = require('./lib/middlewares/etag');
-const help = require('./lib/middlewares/help');
 
 const Router = require('koa-router');
 const api = Router({prefix: '/api'});
-const mock = require('./lib/common/mock')(api);
 
-// real resource
 require('./lib/resources/user.rs')(api);
-// mock resource
-mock('/users', require('./lib/resources/user.schm'));
 
 app.proxy = true;
 app.use(helmet());
@@ -32,7 +27,6 @@ app.use(xTime());
 app.use(bodyParser());
 app.use(compress());
 app.use(timeout(500));
-app.use(help(api));
 app.use(etag());
 app.use(api.routes());
 app.on('error', err => global.logger.error(err));
